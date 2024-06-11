@@ -8,3 +8,5 @@
 3. How to Initialize Git?
     -->git init 
     **Initialized empty Git repository in /Users/user/myproject/.git/
+4.How to check the git status?
+    -->git status
