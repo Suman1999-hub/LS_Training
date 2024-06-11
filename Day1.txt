@@ -28,3 +28,6 @@
 
 8. How to check the branch?
     -->git branch
+9. How to switch the branch?
+    --> git checkout master
+    ***Switched to branch 'master'
