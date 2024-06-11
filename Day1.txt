@@ -31,3 +31,6 @@
 9. How to switch the branch?
     --> git checkout master
     ***Switched to branch 'master'
+10. How to create Emergency Branch?
+    -->it checkout -b emergency-fix
+    ***Switched to a new branch 'emergency-fix'
