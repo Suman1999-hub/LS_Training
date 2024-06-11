@@ -18,3 +18,10 @@
 
 6. How to move from stage to commit?
     -->git commit -m "Commit Message"
+
+7.How to upload the project from local to origin/GitHub?
+    -->git init
+    -->git add .
+    -->git commit -m "enter the message"
+    -->git remote add origin https://github.com/*******/******.git
+    -->git push -u origin master
