@@ -25,3 +25,6 @@
     -->git commit -m "enter the message"
     -->git remote add origin https://github.com/*******/******.git
     -->git push -u origin master
+
+8. How to check the branch?
+    -->git branch
