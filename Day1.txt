@@ -5,3 +5,6 @@
     -->cd myProject
     ** mkdir makes a new directory.
     **cd changes the current working directory.
+3.How to Initialize Git?
+    -->git init 
+    **Initialized empty Git repository in /Users/user/myproject/.git/
