@@ -10,3 +10,8 @@
     **Initialized empty Git repository in /Users/user/myproject/.git/
 4.How to check the git status?
     -->git status
+5. Git Staging Environment?
+    -->git add index.html
+        **The file should be Staged
+    ****when we need all folder staging,
+        --> git add
