@@ -1,0 +1,36 @@
+1. How to check version.
+   --> git --version
+2. Create git folder?
+    -->mkder myProject
+    -->cd myProject
+    ** mkdir makes a new directory.
+    **cd changes the current working directory.
+3. How to Initialize Git?
+    -->git init 
+    **Initialized empty Git repository in /Users/user/myproject/.git/
+4.How to check the git status?
+    -->git status
+5. Git Staging Environment?
+    -->git add index.html
+        **The file should be Staged
+    ****when we need all folder staging,
+        --> git add
+
+6. How to move from stage to commit?
+    -->git commit -m "Commit Message"
+
+7.How to upload the project from local to origin/GitHub?
+    -->git init
+    -->git add .
+    -->git commit -m "enter the message"
+    -->git remote add origin https://github.com/*******/******.git
+    -->git push -u origin master
+
+8. How to check the branch?
+    -->git branch
+9. How to switch the branch?
+    --> git checkout master
+    ***Switched to branch 'master'
+10. How to create Emergency Branch?
+    -->it checkout -b emergency-fix
+    ***Switched to a new branch 'emergency-fix'
