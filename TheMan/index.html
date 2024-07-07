@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <div class="inner-container1" >
+            <img class="headMan" id="runMan" src="./image/vecteezy_ai-generated-stylish-man-isolated-on-transparent-background_3642055312343434.png" height="250px" width="550px"/>
+        </div>
+        <div class="inner-container2">
+            <img class="imageMan" src="./image/vecteezy_ai-generated-stylish-man-isolated-on-transparent-background_36420553.png" width="550px" height="500px" alt="Man"/>
+        </div>
+        <div class="btn">
+            <button id="stpbtn" onclick="stopFun()" value="stop">Stop</button>
+            
+        </div>
+
+    </div>
+    <script>
+        
+        
+        function stopFun(){
+            var count=document.getElementById("stpbtn").value;
+            if(count==="stop"){
+                document.getElementById("stpbtn").value="start";
+                document.getElementById("runMan").style.animationPlayState = "paused";
+                console.log(count);
+            }
+            else{
+                document.getElementById("stpbtn").value="stop";
+                document.getElementById("runMan").style.animationPlayState = "running";
+                console.log(count);
+            }
+        }
+    </script>
+</body>
+</html>

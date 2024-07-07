@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <link href="https://fonts.cdnfonts.com/css/seven-segment" rel="stylesheet">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="innerContainer">
+            <div class="roundBox" id="box1">
+                <div class="demo" id="demo1"></div>
+                
+            </div>
+            <div class="roundBox" id="box2">
+                <div class="demo" id="demo2"></div>
+            </div>
+            <div class="roundBox" id="box3">
+                <div class="demo" id="demo3"></div>
+            </div>
+        </div>
+        <div class="butn">
+            <button id="btn" value="10" onclick="myBtn()" >Start</button>
+            <div id="text"></div>
+        </div>
+    </div>
+
+
+    <script>
+        
+        
+        function myBtn(){
+            
+                const button = document.getElementById("btn");
+                button.setAttribute("disabled", "");
+                showRed();
+                setTimeout( ()=>{showGreen()},10000);
+                setTimeout( ()=>{showYellow()},15000);
+            
+            
+            
+        }
+
+        function showRed(){
+            var x=document.getElementById('btn').value;
+            const rShow=setInterval(() => {
+                
+                console.log('1111111');
+                    document.getElementById('box1').style.backgroundColor="red";
+                    if(x!=0){
+                        x=x-1;
+                        if(x<10){
+                            document.getElementById('demo1').innerText="0"+x;
+                        }
+                        else{
+                            document.getElementById('demo1').innerText=x;
+                        }
+                        
+                    }
+                    if(x===0){
+                        document.getElementById('box1').style.backgroundColor="#3f0303";
+                        clearInterval(rShow);
+
+                    }
+                }, 1000);
+        }
+        
+        function showYellow(){
+            var y=2;
+             const yShow=setInterval(() => {
+                document.getElementById('box2').style.backgroundColor="#fff400";
+                //if(y!=0){
+                    y=y-1;
+                //     if(y<10){
+                //         document.getElementById('box2').innerText="0"+y;
+                //     }
+                //     else{
+                //         document.getElementById('box2').innerText=y;
+                //     }
+                        
+                // }
+                
+                if(y===0){
+                     document.getElementById('box2').style.backgroundColor="rgb(127 89 8)";
+                     clearInterval(yShow);
+                     showRed();
+                    setTimeout( ()=>{showGreen()},10000);
+                    setTimeout( ()=>{showYellow()},15000);
+                }
+                
+                
+            }, 1000);
+            console.log("hi");
+           
+            
+            
+        }
+        
+        function showGreen(){
+            var z=5;
+            const gShow=setInterval(() => {
+                document.getElementById('box3').style.backgroundColor="#02ff02";
+                
+                //if(z!=0){
+                    z=z-1;
+                //     if(z<10){
+                //         document.getElementById('box3').innerText="0"+z;
+                //     }
+                //     else{
+                //         document.getElementById('box3').innerText=z;
+                //     }
+                        
+                // }
+                if(z===0){
+                    document.getElementById('box3').style.backgroundColor="#062906";
+                    clearInterval(gShow);
+                }
+
+            }, 1000);
+        }
+        
+
+    </script>
+    
+</body>
+</html>

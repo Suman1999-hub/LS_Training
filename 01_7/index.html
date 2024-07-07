@@ -1,0 +1,107 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <title>Document</title>
+</head>
+<body onkeydown="addBackground(event)" >
+    <h1>JQuery</h1>
+    <section class="welcome-screen">
+        <h1>Welcome to the Most Amazing Places</h1>
+        <h1>Press Enter to Continue</h1>
+    </section>
+    <div class="main hidden">
+         <h1>Do you like this screen? Y/N</h1>
+    </div> 
+    <p>Welcome to the Most Amazing Places</p>
+    <p class="demo">Press Enter to Continue</p>
+     
+
+    <script>
+         var test=0;
+         $('body').keypress(function(event){
+             test=test+1;
+             $('p').text(test);
+             console.log(event.keyCode);
+           
+            
+             //alert(event.key+" Hi");
+         })
+
+         $('body').on('keypress',function(event){
+             if(event.keyCode==13){
+                 $('.welcome-screen').addClass('hidden');
+                 $('.main').removeClass('hidden');
+             }
+         })
+
+        $('.demo').removeClass(); 
+
+       
+        function addBackground(e){
+            console.log(e.keyCode);
+            if(e.keyCode==13){
+                $('.welcome-screen').addClass('hidden');
+                $('.main').removeClass('hidden');
+            }
+            if(e.keyCode==89){
+                $('body').css('background-color','aqua');
+                $('h1').text("Then have a look at this one!!");
+            }
+            if(e.keyCode==78){
+                $('body').css('background-image','none');
+                $('body').css('background-color','red');
+               'h1').text("Sorry");
+            } 
+            
+
+          
+            if(e.keyCode==13){
+                $('.welcome-screen').fadeOut(4000);
+                $('.main').fadeIn(6000);
+            }
+            if(e.keyCode==89){
+                $('body').css('background-color','aqua');
+                $('h1').text("Then have a look at this one");
+            }
+            if(e.keyCode==78){
+                $('body').css('background-color','none');
+                $('body').css('background-color','red');
+                $('h1').text("sorry");
+            }
+        } 
+    </script> 
+    
+ </body>
+</html>  -->
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <title>Document</title>
+</head>
+<body>
+    <h1>WelCome to the WebSite</h1>
+    <button>Learn More</button>
+    <audio controls>
+        <source src="./Image/amalgam-217007.ogg" type="audio/ogg">
+        <source src="./Image/amalgam-217007.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <video width="100%" height="100%" autoplay loop>
+        <source src="./Image/8820216-uhd_3840_2160_25fps.mp4" type="video/mp4">
+        <source src="./Image/8820216-uhd_3840_2160_25fps.ogg" type="video/ogg">
+      Your browser does not support the video tag.
+      </video>
+</body>
+</html>

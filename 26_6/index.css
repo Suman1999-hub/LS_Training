@@ -1,0 +1,72 @@
+.roundBox{
+    min-height: 200px;
+    max-width: 200px;
+    margin: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;  
+    text-align: center;
+    font-size: 60px;
+    color: white;
+    
+    
+}
+#box1{
+    border: 1px solid red;
+    border-radius: 100px;
+     background-color: #3f0303;
+     
+    
+}
+#box2{
+    border: 1px solid rgb(255, 174, 0);
+    border-radius: 100px;
+    background-color: rgb(127 89 8);
+}
+#box3{
+    border: 1px solid green;
+    border-radius: 100px;
+    background-color: #062906;
+}
+#demo{
+    font-size: 35px;
+    min-height:60px ;
+    border: 1px solid black ;
+    min-width: 100px;
+    margin-left: 10px;
+    margin-top: 5px;
+    border-radius: 10px;
+    text-align: center;
+    padding-top: 1px;
+    font-family: 'Seven Segment', sans-serif;
+}
+.innerContainer{
+    min-width: 250px;
+    margin: auto;
+    border: 2px solid black;
+    width: 15%;
+    background-color: #290627;
+    border-radius: 10px;   
+}
+.butn{
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+#btn{
+    height: 70px;
+    width: 150px;
+    margin-top: 10px;
+    color: white;
+    border-radius: 10px;
+    background: linear-gradient(45deg, rgb(248, 23, 222), rgb(4, 12, 239));
+
+}
+#demo1{
+    
+    text-align: center;
+    margin:50px;
+}
+
+

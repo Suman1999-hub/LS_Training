@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="./index.css">
+    <!-- <style>
+        h1{
+            color: brown;
+        }
+        a:hover{
+            color: aqua;
+            font-size:25px
+        }
+    </style> -->
+</head>
+<body>
+    <!-- <h1 style="color: aqua;">Welcome to the W3 school</h1> -->
+     <!-- <a href="#">This is the link</a> -->
+      <div>
+        <input type="button" value="Start" style="background-color: green;color: white;height: 50px; width: 100px; border-radius: 10px;" />
+      </div>
+      <div class="container">
+        <div class="box" id="box1"></div>
+        <div class="box" id="box2"></div>
+        
+      </div>
+      <div class="container" >
+        <div class="box" id="box4"></div>
+        <div class="box" id="box3"></div>
+        
+      </div>
+      <script>
+        
+        const btn= document.querySelector("input");
+        btn.addEventListener("click",myBtn);
+        var box1=document.getElementById('box1');
+        var box2=document.getElementById('box2');
+        var box3=document.getElementById('box3');
+        var box4=document.getElementById('box4');
+        const colorBox=["red","green","blue","aqua"];
+        var clear;
+        function myBtn(){
+            
+            if(btn.value==="Start"){
+                btn.value= "Stop";
+                btn.style.backgroundColor="red";
+                console.log(btn.value);
+                clear= setInterval(check,1000);
+            }
+            else{
+                btn.value= "Start";
+                btn.style.backgroundColor="green";
+                clearInterval(clear);
+                box1.style.backgroundColor=colorBox[0];
+                box2.style.backgroundColor=colorBox[1];
+                box3.style.backgroundColor=colorBox[2]; 
+                box4.style.backgroundColor=colorBox[3];
+            
+            }
+        }
+        
+        console.log(btn);
+        
+        function check(){
+                let last =colorBox[colorBox.length-1];
+                box1.style.backgroundColor=last;
+                box2.style.backgroundColor=colorBox[0];
+                box3.style.backgroundColor=colorBox[1]; 
+                box4.style.backgroundColor=colorBox[2];
+                colorBox.unshift(colorBox.pop());
+                console.log(colorBox);  
+        }
+        
+        
+        
+      </script>
+    
+</body>
+
+</html>

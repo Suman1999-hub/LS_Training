@@ -1,0 +1,33 @@
+.container{
+    
+    min-height: 100vh;
+    background-color: black;
+}
+.sun{
+    height: 100px;
+    width: 100px;
+    display: block;
+    margin: auto;
+    padding-top: 20%;
+
+}
+
+.mars{
+    height: 70px;
+    width:70px;
+    display: block;
+    margin: auto;
+    /* padding-top: 2%; */
+    animation: marsRound 20s infinite linear; 
+}
+@keyframes marsRound { 
+    0% { 
+        transform: rotate(0deg)  
+              translateY(200px) rotate(360deg); 
+    } 
+
+    100% { 
+        transform: rotate(360deg)  
+              translateY(200px) rotate(0deg); 
+    } 
+} 

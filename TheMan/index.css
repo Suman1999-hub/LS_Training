@@ -1,0 +1,46 @@
+.container{
+    background-color: rgb(113, 245, 245);
+    height: 800px;
+}
+.inner-container1{
+    display: flex;
+    justify-content: center;
+     
+}
+.inner-container2{
+    display: flex;
+    justify-content: center; 
+    margin-top: 250px;
+}
+
+.btn{
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+.headMan{
+    position: absolute;
+    animation: linear infinite;
+    animation-name: run;
+    animation-duration: 10s;
+    animation-play-state: running;
+}
+@keyframes run {
+    0% {
+      left: 0;
+    }
+    48% {
+      transform: rotateY(0deg); 
+    }
+    50% { 
+      left: calc(80% - 100px);
+      transform: rotateY(360deg); 
+    }
+    98% {
+      transform: rotateY(360deg); 
+    }
+    100% {
+      left: 0;    
+       transform: rotateY(0deg);
+    }
+  }
