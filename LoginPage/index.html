@@ -17,15 +17,18 @@
 </head>
 <body >
     <div class="container" id="cont" >
+      <div class="m-5 " style="display: flex;justify-content: flex-end; ">
+        
+        <input id="currDate" class="form-control" style="width: 150px;background: linear-gradient(45deg, rgb(248, 23, 222), rgb(4, 12, 239)); color: white; " type="date" />
+        <div>
+          <span id="dateSelected"></span>
+      </div>
+    </div>
         <div class="inner-container  rounded-4 p-3 m-5 bg-success p-2 text-dark bg-opacity-10 mx-auto " style="box-shadow: rgba(248, 2, 211, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;">
             <div class="row p-5">
               <div class="col mx-auto my-auto p-5">
                 <h2 class="text-center fs-1">Log In</h2>
-                <div class="form-floating mb-4">
-                    <input id="name" type="text" class="form-control" placeholder="name" value="" required>
-                    <label for="name">Name</label>
-                    <span id="formName" class="text-danger"></span>
-                  </div>
+                
                 <div class="form-floating mb-4" >
                     <input id="email" type="email" class="form-control" placeholder="name@example.com" value="" required>
                     <label for="email">Email address</label>
