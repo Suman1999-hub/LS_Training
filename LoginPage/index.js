@@ -62,24 +62,28 @@ function BtnClick() {
         console.log(parseData[i]);
         if (parseData[i].email === email1) {
           //parseData[i].currDate = new Date(selectedDate);
-
-          if (parseData[i].currDate) {
-            if (CheckDateisYesterday(selectedDate, parseData[i].currDate)) {
-              parseData[i].count = parseData[i].count + 1;
+          if (selectedDate !== parseData[i].currDate) {
+            if (parseData[i].currDate) {
+              if (CheckDateisYesterday(selectedDate, parseData[i].currDate)) {
+                parseData[i].count = parseData[i].count + 1;
+              } else {
+                parseData[i].count = 1;
+              }
             } else {
               parseData[i].count = 1;
             }
-          } else {
-            parseData[i].count = 1;
+            parseData[i].coin = coinCount(
+              parseData[i].count,
+              parseData[i].coin
+            );
           }
-          parseData[i].coin = coinCount(parseData[i].count, parseData[i].coin);
 
           if (parseData[i].count === 6 && parseData[i].isBlueScreen === false) {
             parseData[i].screen.push("blue");
             parseData[i].isBlueScreen = true;
           }
           if (parseData[i].count > 5 && parseData[i].isBlueScreen === true) {
-            parseData[i].count = 1;
+            parseData[i].count = 0;
           }
           parseData[i].prevDate = parseData[i].currDate;
           parseData[i].currDate = selectedDate;
