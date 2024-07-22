@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" type="text/css" href="./index.css">
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+    crossorigin="anonymous"
+  />
+  <style>
+    body {
+      display: flex;
+      min-height: 100vh;
+      flex-direction: column;
+    }
+    .sidebar {
+      height: 100vh;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      background-color: #343a40;
+      padding-top: 1rem;
+      transition: transform 0.3s ease;
+    }
+    .sidebar.closed {
+      transform: translateX(-100%);
+    }
+    .sidebar .nav-link {
+      color: white;
+    }
+    .sidebar .nav-link:hover {
+      background-color: #495057;
+    }
+    .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      background: none;
+      border: none;
+      color: rgb(16, 224, 239);
+      font-size: 2rem;
+    }
+    .content {
+      margin-left: 250px;
+      padding: 1rem;
+      flex: 1;
+      transition: margin-left 0.2s ease;
+    }
+    .content.expanded {
+      margin-left: 0;
+    }
+    .navbar {
+      margin-left: 250px;
+      background-color: #343a40;
+      transition: margin-left 0.3s ease;
+    }
+    .navbar.expanded {
+      margin-left: 0;
+    }
+    .navbar .nav-link {
+      color: white;
+    }
+  </style>
+  <title>Singer</title>
+</head>
+<body>
+  
+  <div class="sidebar" id="sidebar">
+    <button class="close-btn" id="close-btn">&times;</button>
+    
+    <nav class="nav nav-pills flex-column mt-5">
+      <a class="nav-link" href="#home"><img src="./image/home.png" alt="home" height="25px" /><span class="mx-3">Home</span></a>
+      <a class="nav-link" href="#search"> <img src="./image/magnifying-glass.png" alt="home" height="20px" /><span class="mx-3">Search</span></a>
+      <a class="nav-link" href="#recents"><img src="./image/recent.png" alt="home" height="25px" /><span class="mx-3">Recents</span></a>
+    </nav>
+  </div>
+
+  <nav class="navbar navbar-expand-lg navbar-dark" id="navbar">
+   
+    
+    <div class="container-fluid">
+      <img src="./image/menu.png" height="40px" width="40px" id="menu-btn" />
+      <div style="display: flex;">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width: 500px;">
+        <img src="./image/search.png" alt="img" width="50px" />
+      </div>
+
+      
+      <a class="navbar-brand" href="#"><span style="color:aqua;font-size: 30px;">Music Player</span></a>
+    </div>
+  </nav>
+
+  
+  <div class="content" id="content">
+
+    <div id="carouselExampleInterval" class="carousel slide" data-bs-ride="carousel" >
+      <div class="carousel-inner" style="height: 500px;">
+        <div class="carousel-item active" data-bs-interval="10000">
+          <img src="./image/vecteezy_handsome-young-male-singer-holds-a-microphone-stand-and_29630474.jpeg" class="d-block w-100" alt="img-1">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="./image/vecteezy_handsome-young-male-singer-holds-a-microphone-stand-and_29630472.jpeg" class="d-block w-100" alt="img-2">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="./image/vecteezy_handsome-young-male-singer-holds-a-microphone-stand-and_29630463.jpeg" class="d-block w-100" alt="img-3">
+        </div>
+        <div class="carousel-item" data-bs-interval="2000">
+          <img src="./image/vecteezy_handsome-young-male-singer-holds-a-microphone-stand-and_29630499.jpeg" class="d-block w-100" alt="img-4">
+        </div>
+        <div class="carousel-item">
+          <img src="./image/vecteezy_ai-generated-dynamic-rock-band-concert-in-neon_39271384.jpg" class="d-block w-100" alt="img-5">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+    <div class="d-flex align-content-start flex-wrap justify-content-around">
+      <div>
+        <h1>Popular albums</h1>
+      </div>
+      
+      <div id="albums"></div>
+         
+      
+      
+    </div>
+    <div>
+      <h1>Popular artists</h1>
+      <div>
+        <a href="#" class="btn" >
+          <div style="width: 12rem;">
+            <img src="./image/vecteezy_handsome-young-male-singer-holds-a-microphone-stand-and_29630483.jpeg" class="card-img-top rounded-circle" alt="..." width="150px" height=" 200px" >
+            <div class="card-body">
+              <h5 class="card-title">Name</h5>
+              <p class="card-text">Artist</p>
+              
+            </div>
+          </div>
+        </a>
+        <a href="#" class="btn" >
+          <div style="width: 12rem;">
+            <img src="./image/vecteezy_ai-generated-beautiful-young-woman-singing-into-a_35759728.jpg" class="card-img-top rounded-circle" alt="..." width="150px" height=" 200px" >
+            <div class="card-body">
+              <h5 class="card-title">Name</h5>
+              <p class="card-text">Artist</p>
+              <!-- <audio controls>
+                <source src="https://jumpshare.com/v/CioF7qVjAYtaxxsntf52?b=qL7FirC5Efy2qaWCnf5Q" type="audio/ogg">
+                <source src="https://jumpshare.com/v/CioF7qVjAYtaxxsntf52?b=qL7FirC5Efy2qaWCnf5Q" type="audio/mpeg">
+                Your browser does not support the audio tag.
+              </audio> -->
+            </div>
+          </div>
+        </a>
+        <a href="#" class="btn" >
+          <div style="width: 12rem;">
+            <img src="./image/vecteezy_ai-generated-dynamic-rock-band-concert-in-neon_39271384.jpg" class="card-img-top rounded-circle" alt="..." width="150px" height=" 200px" >
+            <div class="card-body">
+              <h5 class="card-title">Name</h5>
+              <p class="card-text">Artist</p>
+              
+            </div>
+          </div>
+        </a>
+        <a href="#" class="btn" >
+          <div style="width: 12rem;">
+            <img src="./image/vecteezy_beautiful-girl-in-karaoke-club_29561137 (1).jpg" class="card-img-top rounded-circle" alt="..." width="150px" height=" 200px" >
+            <div class="card-body">
+              <h5 class="card-title">Name</h5>
+              <p class="card-text">Artist</p>
+              
+            </div>
+          </div>
+        </a>
+        <a href="#" class="btn" >
+          <div style="width: 12rem;">
+            <img src="./image/vecteezy_handsome-young-male-singer-holds-a-microphone-stand-and_29630474.jpeg" class="card-img-top rounded-circle" alt="..." width="150px" height=" 200px" >
+            <div class="card-body">
+              <h5 class="card-title">Name</h5>
+              <p class="card-text">Artist</p>
+              
+            </div>
+          </div>
+        </a>
+        <a href="#" class="btn" >
+          <div style="width: 12rem;">
+            <img src="./image/vecteezy_handsome-young-male-singer-holds-a-microphone-stand-and_29630499.jpeg" class="card-img-top rounded-circle" alt="..." width="150px" height=" 200px" >
+            <div class="card-body">
+              <h5 class="card-title">Name</h5>
+              <p class="card-text">Artist</p>
+              
+            </div>
+          </div>
+        </a>
+        <a href="#" class="btn" >
+          <div style="width: 12rem;">
+            <img src="./image/vecteezy_model-girl-with-microphone-isolated_26992028.jpg" class="card-img-top rounded-circle" alt="..." width="150px" height=" 200px" >
+            <div class="card-body">
+              <h5 class="card-title">Name</h5>
+              <p class="card-text">Artist</p>
+              
+            </div>
+          </div>
+        </a>
+      </div>
+      </div>
+      </div>
+
+    </div>
+
+  </div>
+  <script src="./main.js"></script>
+  <script
+    src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"
+  ></script>
+  
+  <script>
+    const closeBtn = document.getElementById('close-btn');
+    const menuBtn = document.getElementById('menu-btn');
+    const sidebar = document.getElementById('sidebar');
+    const content = document.getElementById('content');
+    const navbar = document.getElementById('navbar');
+
+    const toggleSidebar = () => {
+      sidebar.classList.toggle('closed');
+      content.classList.toggle('expanded');
+      navbar.classList.toggle('expanded');
+    };
+
+    closeBtn.addEventListener('click', toggleSidebar);
+    menuBtn.addEventListener('click', toggleSidebar);
+  </script> 
+</body>
+</html> 
+
+
